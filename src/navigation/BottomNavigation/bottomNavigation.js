@@ -13,7 +13,8 @@ export default function BottomNavigation() {
       <Tab.Navigator screenOptions={{
         headerShown: false,
         tabBarStyle: bottomNavStyles.footer,
-        tabBarItemStyle: {paddingBottom: 10}
+        tabBarItemStyle: {paddingBottom: 10},
+        tabBarActiveTintColor: '#00A981',
       }}>
       <Tab.Screen name="Feed" component={Home}
         // options={
@@ -46,6 +47,7 @@ export default function BottomNavigation() {
       options={
          {
           headerShown: false,
+          tabBarLabel: '',
           tabBarIcon: ({ focused, color, size }) => {
             return (
               // <Icon name="retweet" size={20} />

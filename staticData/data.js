@@ -50,10 +50,10 @@ export const posts = [
       location: 'Peninsula Park, Andheri, Mumbai',
       likes: 25,
       events: {
-        eventName: '',
-        eventDate: '',
-        eventLocation: '',
-        numberOfpeopleAttending: ''
+        eventName: 'Cancer meet at Rajeev Gandhi National Park',
+        eventDate: 'Tue, apr 23, 2019 | 7 pm IST',
+        eventLocation: 'Rajeev gandhi national park, mumbai',
+        numberOfpeopleAttending: '21'
 
       },
       comments: [
@@ -95,6 +95,7 @@ export const posts = [
         "events": null,
         "location": "Gym, Bandra, Mumbai",
         "postImage": "https://picsum.photos/201",
+        pollResult: {},
         "comments": [
           {
             "id": 1,

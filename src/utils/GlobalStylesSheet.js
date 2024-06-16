@@ -41,6 +41,7 @@ export const postStyles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-around',
+        width: '100%'
     },
     avatar:{
         // width: 40,
@@ -101,7 +102,7 @@ export const postStyles = StyleSheet.create({
         color: '#00A981',
         fontFamily:'Proxima Nova',
         fontSize: 10,
-        paddingLeft: 5
+        paddingLeft: 5,
     },
     seprator: {
         width: '100%',
@@ -119,6 +120,10 @@ export const postStyles = StyleSheet.create({
         fontSize: 12,
         color: '#545B63',
         marginLeft: 10
+    },
+    eventLoc: {
+        color: '#A5B1C2',
+        fontSize: 12
     }
 })
 
@@ -178,3 +183,101 @@ export const loginStyles = StyleSheet.create({
         fontSize: 16
     },
 });
+
+export const eventStyles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: 'row',
+      backgroundColor: '#EEFAF9',
+      justifyContent: 'space-between',
+      padding: 20,
+      marginTop: 9
+    },
+    title: {
+      fontSize: 14,
+      fontWeight: 'bold',
+      marginBottom: 3,
+      color: '#545B63'
+    },
+    people: {
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    peopleText: {
+      fontSize: 12,
+      color: '#545B63',
+      fontFamily: 'Proxima Nova'
+    },
+    peopleIcon: {
+      fontSize: 12,
+      marginRight: 5,
+    },
+    buttons: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    button: {
+        width: 66,
+      padding: 10,
+      borderRadius: 25,
+      borderWidth: 1,
+      borderColor: '#CCEEE6',
+    },
+    buttonYes: {
+    marginLeft: 10
+    },
+    buttonText: {
+      fontSize: 14,
+      textAlign: 'center',
+      color: '#00A981',
+    },
+  });
+
+  export const pollResultStyles = StyleSheet.create({
+    container: {
+      paddingVertical: 10,
+    },
+    title: {
+      fontSize: 16,
+      fontWeight: 'bold',
+      color: '#545B63',
+      marginBottom: 11,
+    },
+    option: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: 9,
+    },
+    optionBox: {
+      backgroundColor: '#f2f2f2',
+      paddingHorizontal: 10,
+      borderRadius: 5,
+      height: 40,
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    optionText: {
+      fontSize: 12,
+      color: '#545B63',
+      fontWeight: '400'
+    },
+    percent: {
+        fontSize: 12,
+        color: '#545B63',
+        fontWeight: '400'
+    },
+    footer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginTop: 5,
+      color: '#A5B1C2'
+    },
+    footerDot: {
+        marginHorizontal: 4,
+        fontSize: 14
+    },
+    footerText: {
+      fontSize: 14,
+    },
+  });
