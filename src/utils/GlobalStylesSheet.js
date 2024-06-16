@@ -1,5 +1,19 @@
 import { StyleSheet } from "react-native";
 
+export const bottomNavStyles = StyleSheet.create({
+    footer:{
+        height: 66,
+        paddingVertical: 8
+    },
+    bottomIcons: {
+        width: 32,
+        height: 32
+    },
+    bottomAddIcon: {
+        width: 42,
+        height: 42
+    },
+})
 
 export const postStyles = StyleSheet.create({
     container: {
