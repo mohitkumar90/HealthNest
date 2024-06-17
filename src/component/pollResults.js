@@ -26,7 +26,8 @@ const PollResults = () => {
       </View>
       <View style={pollResultStyles.footer}>
         <Text style={pollResultStyles.footerText}>203 votes</Text>
-        <Text style={pollResultStyles.footerText}>• Poll Ended</Text>
+        <Text style={pollResultStyles.footerDot}>.</Text>
+        <Text style={pollResultStyles.footerText}>Poll Ended</Text>
       </View>
     </View>
   );

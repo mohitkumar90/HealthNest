@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import { postStyles, eventStyles } from '../utils/GlobalStylesSheet'
 import { Avatar } from 'react-native-paper'
 import PollResults from './pollResults'
+import SharePopup from './sharePopup'
+import PostOptions from './postoptions'
+// import Svg, {
+//     Use,
+//     Image,
+//   } from 'react-native-svg';
+  
+export default function PostDescription({ title, navigation }) {
 
-export default function PostDescription({ title }) {
-    console.log(title)
+    const [openShareModal, setOpenShareModal] = useState(false);
+    const [openPostOptionModal, setOpenPostOptionModal] = useState(false)
+
     return (
         <>
-            <ScrollView>
+        <SharePopup openShareModal={openShareModal} setOpenShareModal={setOpenShareModal} />
+        <PostOptions openPostOptionModal={openPostOptionModal} setOpenPostOptionModal={setOpenPostOptionModal} />
+           
                 <View style={postStyles.container}>
                     <View style={postStyles.categorySection}>
                         <Text style={postStyles.category}>{title.category}</Text>
@@ -24,14 +35,17 @@ export default function PostDescription({ title }) {
                                 </View>
                                 <Text style={postStyles.recent}>{title.recent}</Text>
                             </View>
+                            <TouchableOpacity onPress={()=>setOpenPostOptionModal(true)}>
                             <Image style={postStyles.optionIcon} source={require('../assests/icons/option.png')} />
+                        </TouchableOpacity>
+                            
                         </View>
 
                     </View>
                     {title.events ?
                         <View>
-                            <View style={postStyles.details}>
-                                <Text style={postStyles.question}>{title.events.eventName}</Text>
+                            <View style={postStyles.eventDetails}>
+                                <Text style={postStyles.eventName}>{title.events.eventName}</Text>
                                 <Text style={postStyles.content}>{title.events.eventDate}</Text>
                                 <Text style={postStyles.eventLoc}>{title.events.eventLocation}</Text>
                             </View>
@@ -65,6 +79,8 @@ export default function PostDescription({ title }) {
                     }
                     {title.pollResult && <PollResults />}
 
+                    {title.postImage && <Image style={postStyles.postImage} source={{ uri: title.postImage }} />}
+
                     {!title.events && <Text style={postStyles.location}>{title.location}</Text>}
                     <View style={postStyles.seprator} />
                     <View style={{ flex: 1, flexDirection: 'row' }}>
@@ -76,24 +92,24 @@ export default function PostDescription({ title }) {
                     <View style={postStyles.seprator} />
 
                     <View style={postStyles.reactSection}>
-                        <View style={{ flex: 1, flexDirection: 'row' }}>
+                         <TouchableOpacity style={eventStyles.buttons}>
                             <Image style={postStyles.react} source={require('../assests/icons/Like.png')} />
-                            <Text>24</Text>
-                        </View>
-                        <View style={{ flex: 1, flexDirection: 'row' }}>
+                            <Text style={postStyles.reactText}>24</Text>
+                        </TouchableOpacity>
+                         <TouchableOpacity onPress={() => navigation.navigate('Question',{state:  title })} style={eventStyles.buttons}>
                             <Image style={postStyles.react} source={require('../assests/icons/comment-lines.png')} />
-                            <Text>24</Text>
-                        </View>
-                        <View style={{ flex: 1, flexDirection: 'row' }}>
+                            <Text style={postStyles.reactText}>24</Text>
+                        </TouchableOpacity>
+                         <TouchableOpacity style={eventStyles.buttons}>
                             <Image style={postStyles.react} source={require('../assests/icons/Group.png')} />
-                        </View>
-                        <View style={{ flex: 1, flexDirection: 'row' }}>
+                        </TouchableOpacity>
+                         <TouchableOpacity style={eventStyles.buttons} onPress={()=>setOpenShareModal(true)}>
                             <Image style={postStyles.react} source={require('../assests/icons/Share.png')} />
-                        </View>
+                        </TouchableOpacity>
                     </View>
 
                 </View>
-            </ScrollView>
+           
         </>
     )
 }

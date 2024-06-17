@@ -1,19 +1,26 @@
 
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList, ScrollView } from 'react-native';
 import { posts } from '../../staticData/data';
 import PostDescription from '../component/postDescription';
+import AddPost from '../component/addPost';
+import Header from '../component/header';
 
-const Home = () => {
+const Home = ({navigation, openAddPostModal, setOpenAddPostModal}) => {
 
   return (
-    <View style={{flex: 1}}>
+   <View>
+    <Header />
+    <ScrollView>
+     <View style={{marginBottom: 200}}>
       <FlatList
         data={posts}
-        renderItem={({item}) => <PostDescription title={item} />}
+        renderItem={({item}) => <PostDescription title={item} navigation={navigation} />}
         keyExtractor={item => item.id}
       />
     </View>
+    </ScrollView>
+   </View>
   );
 };
 

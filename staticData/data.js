@@ -12,7 +12,7 @@ export const posts = [
       likes: 15,
       events: null,
       location: 'Peninsula Park, Andheri, Mumbai',
-      postImage: 'https://picsum.photos/200',
+      postImage: null,
       comments: [
         { 
             id: 1,
@@ -21,9 +21,11 @@ export const posts = [
             time: '10 minutes ago',
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             category: 'diet',
+            recent: 'Diagnosed Recently',
             likes: '',
             dislikes: '',
-            reply: []
+            reply: [],
+            myComment: false,
         },
         { 
             id: 2,
@@ -32,9 +34,11 @@ export const posts = [
             time: '10 minutes ago',
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             category: 'diet',
+            recent: 'Diagnosed Recently',
             likes: '',
             dislikes: '',
-            reply: []
+            reply: [],
+            myComment: true
         },
       ],
     },
@@ -94,7 +98,7 @@ export const posts = [
         "likes": 20,
         "events": null,
         "location": "Gym, Bandra, Mumbai",
-        "postImage": "https://picsum.photos/201",
+        "postImage": null,
         pollResult: {},
         "comments": [
           {

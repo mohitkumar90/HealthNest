@@ -9,9 +9,10 @@ import MainNavigationStack from './src/navigation/mainNavigation';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { PaperProvider } from 'react-native-paper';
 import { PersistGate } from 'redux-persist/integration/react'
+import { NativeBaseProvider } from "native-base";
 
 
-import {store, persistor} from './src/store/main';
+import { store, persistor } from './src/store/main';
 import { Provider } from 'react-redux';
 import { Text } from 'react-native';
 
@@ -19,14 +20,17 @@ function App(): React.JSX.Element {
 
   return (
     <>
-    <SafeAreaProvider>
+      <SafeAreaProvider>
         <PaperProvider>
-        <Provider store={store}>
-    <PersistGate loading={<Text>Loading...</Text>} persistor={persistor}>
-    <MainNavigationStack />
-    </PersistGate>
-    </Provider>
-            
+        <NativeBaseProvider>
+           
+          <Provider store={store}>
+            <PersistGate loading={<Text>Loading...</Text>} persistor={persistor}>
+              <MainNavigationStack />
+            </PersistGate>
+          </Provider>
+          </NativeBaseProvider>
+
         </PaperProvider>
       </SafeAreaProvider>
     </>
