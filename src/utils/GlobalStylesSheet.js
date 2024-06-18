@@ -340,6 +340,7 @@ export const loginStyles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'left',
+        backgroundColor: 'white',
         padding: 20,
     },
     logo: {
@@ -350,9 +351,11 @@ export const loginStyles = StyleSheet.create({
     },
     welcomeText: {
         fontSize: 30,
+        fontFamily: 'Inter',
         fontWeight: '700',
         marginBottom: 30,
-        color: '#545B63'
+        color: '#545B63',
+        lineHeight: 36
     },
     input: {
         borderBottomColor: '#A5B1C2',
@@ -364,12 +367,18 @@ export const loginStyles = StyleSheet.create({
         fontWeight: '400'
     },
     securityText: {
+        fontFamily: 'Inter',
+        fontWeight: '400',
         fontSize: 12,
         color: '#A5B1C2',
+        lineHeight: 16.8
     },
     helperText: {
+        fontFamily: 'Inter',
+        fontWeight: '400',
         fontSize: 12,
         color: '#A5B1C2',
+        lineHeight: 16.8,
         marginBottom: 20,
     },
     subTitle: {
@@ -383,7 +392,8 @@ export const loginStyles = StyleSheet.create({
         borderRadius: 2,
         gap: 10,
         marginHorizontal: 'auto',
-        marginTop: 30
+        marginTop: 30,
+
     },
     sendOTPButtonText: {
         color: '#FFFFFF',

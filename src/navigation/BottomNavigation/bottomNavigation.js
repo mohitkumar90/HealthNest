@@ -6,15 +6,17 @@ import Icon from "react-native-vector-icons/AntDesign"
 import { Image, TouchableOpacity, View } from 'react-native';
 import { bottomNavStyles } from '../../utils/GlobalStylesSheet';
 import AddPost from '../../component/addPost';
+import FloatingButton from '../../component/floatingButton';
 
 const Tab = createBottomTabNavigator();
 
 export default function BottomNavigation() {
 
-  const [openAddPostModal, setOpenAddPostModal] = useState(false);
 
   return (
       <>
+          {/* <AddPost openAddPostModal={openAddPostModal} setOpenAddPostModal={setOpenAddPostModal}/> */}
+
       <Tab.Navigator screenOptions={{
         headerShown: false,
         tabBarStyle: bottomNavStyles.footer,
@@ -48,7 +50,7 @@ export default function BottomNavigation() {
         }
        }
       />
-      <Tab.Screen name="Add" component={() => <Home openAddPostModal={openAddPostModal} setOpenAddPostModal={setOpenAddPostModal} />} 
+      <Tab.Screen name="Add" component={() => <></>} 
             // tabPress={()=>setOpenAddPostModal(true)}
       options={
          {
@@ -56,7 +58,8 @@ export default function BottomNavigation() {
           tabBarLabel: '',
           tabBarIcon: ({ focused, color, size }) => {
             return (
-              <TouchableOpacity onPress={()=>{setOpenAddPostModal(true); console.log('move to add component')}}>
+              // <FloatingButton />
+              <TouchableOpacity>
               <Image style={bottomNavStyles.bottomAddIcon} source={require('../../assests/icons/Default.png')} />
               </TouchableOpacity>
             )

@@ -20,7 +20,7 @@ const Header = () => {
                     <TextInput
                         style={headerStyles.inputReply}
                         placeholder="Add a cheerful comment..."
-                        value={'hgjbhm'}
+                        value={''}
                     // onChangeText={setComment}
                     />
                     <TouchableOpacity style={headerStyles.buttonPost}>

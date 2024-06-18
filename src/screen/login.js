@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { loginStyles } from '../utils/GlobalStylesSheet';
+import Logo from '../assests/icons/Logo.svg'
+
 
 const Login = ({navigation}) => {
     const [mobileNumber, setMobileNumber] = useState('');

@@ -1,19 +1,17 @@
 import React, { useEffect } from 'react'
 import { Image, Text, View } from 'react-native'
-import {
-    Actionsheet,
-    useDisclose,
-    Modal
-} from 'native-base';
+// import {
+//     Actionsheet,
+//     useDisclose,
+//     Modal
+// } from 'native-base';
 import { optionModalStyles } from '../utils/GlobalStylesSheet';
+import Modal from "react-native-modal";
 
-export default function AddPost({ openPostOptionModal, setOpenPostOptionModal }) {
+export default function AddPost() {
     return (
-        <Modal isOpen={openPostOptionModal} onClose={() => {setOpenPostOptionModal(false) }}>
-            <Modal.Content width={"90%"}>
-            <Modal.CloseButton />
-                <Modal.Body>
-                    <View>
+        // <Modal isVisible={openAddPostModal}>
+                    <View style={{backgroundColor: 'white'}}>
                         <View style={optionModalStyles.shareOption}>
                             <Image style={optionModalStyles.icon} source={require('../assests/icons/visible.png')} />
                             <View style={optionModalStyles.textSection}>
@@ -47,11 +45,6 @@ export default function AddPost({ openPostOptionModal, setOpenPostOptionModal })
                             </View>
                         </View>
                     </View>
-                </Modal.Body>
-                <Modal.Footer>
-                    
-                </Modal.Footer>
-            </Modal.Content>
-        </Modal>
+                    // </Modal>
     )
 }

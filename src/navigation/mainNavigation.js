@@ -12,7 +12,7 @@ const MainNavigationStack = () => {
 
     return (
         <NavigationContainer ref={navigationRef} >
-            <Stack.Navigator initialRouteName='Home' screenOptions={{
+            <Stack.Navigator initialRouteName='Login' screenOptions={{
                 animationEnabled: false,
             }} >
                 <Stack.Screen name="Login" component={Login} options={{

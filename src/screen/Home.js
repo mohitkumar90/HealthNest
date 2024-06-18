@@ -5,8 +5,9 @@ import { posts } from '../../staticData/data';
 import PostDescription from '../component/postDescription';
 import AddPost from '../component/addPost';
 import Header from '../component/header';
+import FloatingButton from '../component/floatingButton';
 
-const Home = ({navigation, openAddPostModal, setOpenAddPostModal}) => {
+const Home = ({navigation}) => {
 
   return (
    <View>
@@ -20,6 +21,8 @@ const Home = ({navigation, openAddPostModal, setOpenAddPostModal}) => {
       />
     </View>
     </ScrollView>
+    
+
    </View>
   );
 };
