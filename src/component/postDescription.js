@@ -82,7 +82,11 @@ export default function PostDescription({ title, navigation, dispatch }) {
 
                 {title.postImage && <Image style={postStyles.postImage} source={{ uri: title.postImage }} />}
 
-                {!title.events && <Text style={postStyles.location}>{title.location}</Text>}
+                {!title.events && 
+                     <View style={postStyles.locationSection}>
+                        <Image style={postStyles.locIcon} source={require('../assests/icons/map.png')} />
+                        <Text style={postStyles.location}>{title.location}</Text>
+                    </View>}
                 <View style={postStyles.seprator} />
                 <View style={{ flex: 1, flexDirection: 'row' }}>
                     <Avatar.Image size={20} source={{ uri: title.profileImage }} />

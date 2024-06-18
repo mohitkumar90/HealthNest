@@ -147,6 +147,14 @@ export const postStyles = StyleSheet.create({
     eventLoc: {
         color: '#A5B1C2',
         fontSize: 12
+    },
+    locationSection: {
+        flexDirection: 'row'
+    },
+    locIcon:{
+        width: 16,
+        height: 16,
+        marginRight: 4
     }
 })
 
@@ -290,7 +298,8 @@ export const commentStyles = StyleSheet.create({
     replyText:{
         color: '#00A981',
         fontSize: 16,
-        fontWeight: '500'
+        fontWeight: '500',
+        marginRight: 10
     },
     reactCounts: {
         fontFamily: 'Proxima Nova',
@@ -332,6 +341,12 @@ export const commentStyles = StyleSheet.create({
         fontSize: 14,
         fontWeight: 'bold',
       },
+      postBox:{
+        shadowColor: "#A5B1C21A",
+    shadowOpacity: 0.5,
+    shadowRadius: 50,
+    elevation: 10,
+      }
    
 })
 
@@ -359,7 +374,7 @@ export const loginStyles = StyleSheet.create({
         lineHeight: 36
     },
     input: {
-        width: '100%',
+        width: '90%',
         borderBottomColor: '#A5B1C2',
         borderBottomWidth: 1,
         // paddingHorizontal: 10,
@@ -424,7 +439,27 @@ export const loginStyles = StyleSheet.create({
     phoneLogo:{
         width: 24,
         height: 24,
-        marginLeft: -25
+        marginLeft: -25,
+    },
+    flagIcon:{
+        fontSize: 25,
+    },
+    flagSection:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: -15,
+        marginRight: 5
+    },
+    arrowIcon: {
+        width: 6,
+        height: 3,
+        marginLeft: 4
+    },
+    placeholder:{
+        color: '#A5B1C2',
+        fontSize: 10,
+        fontFamily: 'Inter',
+        fontWeight:'400'
     }
 });
 
@@ -687,10 +722,10 @@ export const eventStyles = StyleSheet.create({
       },
     inputReply: {
         flex: 1,
-        padding: 5,
+        padding: 2,
         fontSize: 14,
         marginRight: 10,
-        height: 32
+        height: 32,
       },
       buttonPost: {
         // padding: 5,
@@ -704,6 +739,10 @@ export const eventStyles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between'
+      },
+      arrowD:{
+        width: 22,
+        height: 22
       }
   })
 

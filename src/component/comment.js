@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import { commentStyles, eventStyles } from '../utils/GlobalStylesSheet'
 import { Avatar } from 'react-native-paper'
 import PollResults from './pollResults'
+import SharePopup from './sharePopup'
+import PostOptions from './postoptions'
 
 export default function Comment({ title }) {
+    const [openShareModal, setOpenShareModal] = useState(false);
+    const [openPostOptionModal, setOpenPostOptionModal] = useState(false)
+
     return (
         <>
+        <SharePopup openShareModal={openShareModal} setOpenShareModal={setOpenShareModal} />
+            <PostOptions openPostOptionModal={openPostOptionModal} setOpenPostOptionModal={setOpenPostOptionModal} />
             {!title.myComment ? 
             <View style={commentStyles.commentSection}>
             {title.profileImage && <Avatar.Image size={24} source={{ uri: title.profileImage }} style={commentStyles.avatar} />}
@@ -21,7 +28,9 @@ export default function Comment({ title }) {
                             </View>
                             <Text style={commentStyles.recent}>{title.recent}</Text>
                         </View>
+                        <TouchableOpacity onPress={() => setOpenPostOptionModal(true)}>
                         <Image style={commentStyles.optionIcon} source={require('../assests/icons/option.png')} />
+                        </TouchableOpacity>
                     </View>
 
                 </View>
@@ -37,7 +46,7 @@ export default function Comment({ title }) {
                         <Image style={commentStyles.react} source={require('../assests/icons/Down.png')} />
                         <Text>24</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={eventStyles.buttons}>
+                    <TouchableOpacity style={eventStyles.buttons} onPress={() => setOpenShareModal(true)}>
                         <Image style={commentStyles.shareIcon} source={require('../assests/icons/Share.png')} />
                     </TouchableOpacity>
                     <View style={commentStyles.sepratorVertical} />
@@ -63,10 +72,10 @@ export default function Comment({ title }) {
                             <Image style={commentStyles.react} source={require('../assests/icons/Down.png')} />
                             <Text>24</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={eventStyles.buttons}>
+                        <TouchableOpacity style={eventStyles.buttons} onPress={() => setOpenShareModal(true)}>
                             <Image style={commentStyles.shareIcon} source={require('../assests/icons/Share.png')} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={eventStyles.buttons}>
+                        <TouchableOpacity style={eventStyles.buttons} onPress={() => setOpenPostOptionModal(true)}>
                             <Image style={commentStyles.shareIcon} source={require('../assests/icons/tripledot.png')} />
                         </TouchableOpacity>
                     </View>

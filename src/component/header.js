@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, ScrollView, Animated, StyleSheet } from 'react-native';
 import { Avatar } from 'react-native-paper'
 import { headerStyles } from '../utils/GlobalStylesSheet';
 
 const Header = () => {
+    const [clickEvent, setClickEvent]= useState('All Posts')
     return (
         
   <View style={headerStyles.communityScreen}>
@@ -11,7 +12,7 @@ const Header = () => {
             <View style={headerStyles.replyInputSection}>
                     <TextInput
                         style={headerStyles.inputReply}
-                        placeholder="Add a cheerful comment..."
+                        placeholder="Search posts and members"
                         value={''}
                     // onChangeText={setComment}
                     />
@@ -28,20 +29,23 @@ const Header = () => {
             </View>
             <ScrollView  horizontal={true}>
             <View style={headerStyles.categoryButtons}>
-                <TouchableOpacity style={headerStyles.buttonAllPost}>
+                <TouchableOpacity style={(clickEvent == 'All Posts') ? headerStyles.buttonAllPost : headerStyles.button} onPress={()=>setClickEvent('All Posts')}>
                     <Text style={headerStyles.categoryText}>All Posts</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={headerStyles.button}>
+                <TouchableOpacity style={(clickEvent == 'News') ? headerStyles.buttonAllPost : headerStyles.button} onPress={()=>setClickEvent('News')}>
                     <Text style={headerStyles.categoryText}>News</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={headerStyles.button}>
+                <TouchableOpacity style={(clickEvent == 'Diet') ? headerStyles.buttonAllPost : headerStyles.button} onPress={()=>setClickEvent('Diet')}>
                     <Text style={headerStyles.categoryText}>Diet</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={headerStyles.button}>
+                <TouchableOpacity style={(clickEvent == 'Lifestyle') ? headerStyles.buttonAllPost : headerStyles.button} onPress={()=>setClickEvent('Lifestyle')}>
                     <Text style={headerStyles.categoryText}>Lifestyle</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={headerStyles.button}>
-                    <Text style={headerStyles.categoryText}>Sym</Text>
+                <TouchableOpacity style={(clickEvent == 'Fitness') ? headerStyles.buttonAllPost : headerStyles.button} onPress={()=>setClickEvent('Fitness')}>
+                    <Text style={headerStyles.categoryText}>Fitness</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={(clickEvent == 'Health') ? headerStyles.buttonAllPost : headerStyles.button} onPress={()=>setClickEvent('Health')}>
+                    <Text style={headerStyles.categoryText}>Health</Text>
                 </TouchableOpacity>
             </View>
             </ScrollView>

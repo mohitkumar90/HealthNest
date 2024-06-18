@@ -18,7 +18,9 @@ export default function CommentSection({ route }) {
         <>
             <ScrollView>
                 <View style={{ backgroundColor: '#fff' }}>
+                    <View style={commentStyles.postBox}>
                     <PostDescription title={params.state ? params.state : {}} />
+                    </View>
                     <View>
                         <FlatList
                             ref={flatRef}

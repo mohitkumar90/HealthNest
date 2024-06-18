@@ -46,8 +46,9 @@ const Home = ({ navigation }) => {
           <View style={headerStyles.topSection}>
             <View style={headerStyles.topSubSection}>
               <Text style={headerStyles.heading}>COMMUNITY</Text>
-              <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <Text style={headerStyles.subheading}>All Communities</Text>
+                <Image style={headerStyles.arrowD} source={require('../assests/icons/angle-down.png')} />
               </View>
             </View>
             <Avatar.Image size={30} source={{ uri: 'https://picsum.photos/211' }} />
@@ -82,7 +83,7 @@ const Home = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   content: {
-    paddingTop: 200,
+    paddingTop: 190,
   },
   header: {
     position: 'absolute',
