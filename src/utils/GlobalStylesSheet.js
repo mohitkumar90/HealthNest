@@ -347,6 +347,7 @@ export const loginStyles = StyleSheet.create({
         // width: 70,
         // height: 70,
         marginBottom: 20,
+        marginLeft: -10,
         shadowColor: '0px 4px 10px 0px #0000001A'
     },
     welcomeText: {
@@ -384,6 +385,17 @@ export const loginStyles = StyleSheet.create({
     subTitle: {
         lineHeight: "16.8px",
     },
+    sendOTPButtonEmpty: {
+        width: 107,
+        height: 51,
+        backgroundColor: '#E8EBEF',
+        padding: 15,
+        borderRadius: 2,
+        gap: 10,
+        marginHorizontal: 'auto',
+        marginTop: 30,
+
+    },
     sendOTPButton: {
         width: 107,
         height: 51,
@@ -394,6 +406,11 @@ export const loginStyles = StyleSheet.create({
         marginHorizontal: 'auto',
         marginTop: 30,
 
+    },
+    sendOTPButtonTextEmpty: {
+        color: '#A5B1C2',
+        fontWeight: '700',
+        fontSize: 16
     },
     sendOTPButtonText: {
         color: '#FFFFFF',
@@ -593,10 +610,16 @@ export const eventStyles = StyleSheet.create({
         backgroundColor: 'white',
         marginBottom: 10
       },
+      topSubSection:{
+      },
       topSection:{
+        padding: 15,
+        paddingBottom: 0,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: 'white',
+
       },
       heading: {
         fontSize: 12,

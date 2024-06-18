@@ -2,15 +2,16 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { loginStyles } from '../utils/GlobalStylesSheet';
-import Logo from '../assests/icons/Logo.svg'
+// import Logo from '../assests/icons/Logo.svg'
 
 
 const Login = ({navigation}) => {
     const [mobileNumber, setMobileNumber] = useState('');
 
     const handleSendOTP = () => {
-        // TODO: Implement logic to send OTP
-        console.log('Send OTP clicked');
+        if(mobileNumber.length > 9){
+            navigation.navigate('Home')
+        }
     };
 
     return (
@@ -32,8 +33,8 @@ const Login = ({navigation}) => {
                     Help us create a safe place by providing your mobile number to maintain authenticity.
                 </Text>
             </View>
-            <TouchableOpacity onPress={handleSendOTP} style={loginStyles.sendOTPButton}>
-                <Text style={loginStyles.sendOTPButtonText} onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity onPress={handleSendOTP} style={(mobileNumber.length > 9) ? loginStyles.sendOTPButton : loginStyles.sendOTPButtonEmpty}>
+                <Text style={(mobileNumber.length > 9) ? loginStyles.sendOTPButtonText : loginStyles.sendOTPButtonTextEmpty} >
                     Send OTP
                 </Text>
             </TouchableOpacity >
