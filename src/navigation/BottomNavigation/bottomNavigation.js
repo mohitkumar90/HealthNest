@@ -11,11 +11,12 @@ import FloatingButton from '../../component/floatingButton';
 const Tab = createBottomTabNavigator();
 
 export default function BottomNavigation() {
+  const [openAddPostModal, setOpenAddPostModal] = useState(false);
 
 
   return (
       <>
-          {/* <AddPost openAddPostModal={openAddPostModal} setOpenAddPostModal={setOpenAddPostModal}/> */}
+          <AddPost openAddPostModal={openAddPostModal} setOpenAddPostModal={setOpenAddPostModal}/>
 
       <Tab.Navigator screenOptions={{
         headerShown: false,
@@ -59,7 +60,7 @@ export default function BottomNavigation() {
           tabBarIcon: ({ focused, color, size }) => {
             return (
               // <FloatingButton />
-              <TouchableOpacity>
+              <TouchableOpacity onPress={()=>setOpenAddPostModal(true)}>
               <Image style={bottomNavStyles.bottomAddIcon} source={require('../../assests/icons/Default.png')} />
               </TouchableOpacity>
             )

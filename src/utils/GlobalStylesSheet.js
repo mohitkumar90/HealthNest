@@ -359,6 +359,7 @@ export const loginStyles = StyleSheet.create({
         lineHeight: 36
     },
     input: {
+        width: '100%',
         borderBottomColor: '#A5B1C2',
         borderBottomWidth: 1,
         // paddingHorizontal: 10,
@@ -417,6 +418,14 @@ export const loginStyles = StyleSheet.create({
         fontWeight: '700',
         fontSize: 16
     },
+    inputSection:{
+        flexDirection: 'row'
+    },
+    phoneLogo:{
+        width: 24,
+        height: 24,
+        marginLeft: -25
+    }
 });
 
 export const eventStyles = StyleSheet.create({
@@ -696,4 +705,69 @@ export const eventStyles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between'
       }
+  })
+
+  export const createPostStyles = StyleSheet.create({
+    title: {
+        fontFamily: 'Inter',
+        color: '#545B63',
+        fontSize: 14,
+        fontWeight: '700',
+        marginBottom: 14,
+        marginTop: 10
+    },
+    icon: {
+        width: 30,
+        height: 30,
+        marginTop: 4,
+    },
+    iconArrow: {
+        width: 6,
+        height: 10,
+        marginTop: 4,
+        marginLeft: -70
+    },
+    textSection:{
+        width: '100%',
+    },
+    text:{
+        fontFamily: 'Inter',
+        color: '#00A981',
+        fontSize: 14,
+        fontWeight: '400',
+        marginLeft: 10,
+        marginBottom: 2
+    },
+    text2: {
+        fontFamily: 'Inter',
+        color: '#A5B1C2',
+        fontSize: 12,
+        fontWeight: '400',
+        marginLeft: 10
+    },
+    seprator: {
+        width: '110%',
+        height: 1,
+        backgroundColor: '#E8EBEF',
+        marginVertical: 10,
+        marginLeft: -15
+    },
+    shareOption:{
+        width: '100%',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent:'flex-start',
+        marginBottom: 10,
+        marginLeft: 15
+    },
+    addPostSection: {
+        backgroundColor: 'white',
+        padding: 20,
+        borderRadius: 10
+    },
+    cross: {
+        width: 42,
+        height: 42,
+    },
+    
   })

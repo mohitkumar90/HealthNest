@@ -1,16 +1,19 @@
 
 import React, { useRef, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList, ScrollView, Animated, TextInput } from 'react-native';
-import { posts } from '../../staticData/data';
+// import { posts } from '../../staticData/data';
 import PostDescription from '../component/postDescription';
 import AddPost from '../component/addPost';
 import Header from '../component/header';
-import FloatingButton from '../component/floatingButton';
 import { headerStyles } from '../utils/GlobalStylesSheet';
 import { Avatar } from 'react-native-paper';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Home = ({ navigation }) => {
   const scrollY = useRef(new Animated.Value(0)).current;
+  const posts = useSelector(state=> state.posts)
+
+  const dispatch = useDispatch()
 
   const translateHeader = scrollY.interpolate({
     inputRange: [0, 80],
@@ -67,7 +70,7 @@ const Home = ({ navigation }) => {
           index
         ) => {
           return (
-            <PostDescription title={item} navigation={navigation} />
+            <PostDescription title={item} navigation={navigation} dispatch={dispatch} />
           );
         }}
       />

@@ -1,50 +1,59 @@
 import React, { useEffect } from 'react'
-import { Image, Text, View } from 'react-native'
+import { Image, Text, TouchableOpacity, View } from 'react-native'
 // import {
 //     Actionsheet,
 //     useDisclose,
 //     Modal
 // } from 'native-base';
-import { optionModalStyles } from '../utils/GlobalStylesSheet';
+import { createPostStyles } from '../utils/GlobalStylesSheet';
 import Modal from "react-native-modal";
 
-export default function AddPost() {
+export default function AddPost({openAddPostModal, setOpenAddPostModal}) {
     return (
-        // <Modal isVisible={openAddPostModal}>
-                    <View style={{backgroundColor: 'white'}}>
-                        <View style={optionModalStyles.shareOption}>
-                            <Image style={optionModalStyles.icon} source={require('../assests/icons/visible.png')} />
-                            <View style={optionModalStyles.textSection}>
-                                <Text style={optionModalStyles.text}>Hide Post</Text>
-                                <Text style={optionModalStyles.text2}>See fewer posts like this</Text>
-                                <View style={optionModalStyles.seprator} />
+        <Modal isVisible={openAddPostModal}>
+                    <View style={createPostStyles.addPostSection}>
+                        <View style={createPostStyles.shareOption}>
+                            <Image style={createPostStyles.icon} source={require('../assests/icons/create.png')} />
+                            <View style={createPostStyles.textSection}>
+                                <Text style={createPostStyles.text}>Hide Post</Text>
+                                <Text style={createPostStyles.text2}>See fewer posts like this</Text>
                             </View>
+                            <Image style={createPostStyles.iconArrow} source={require('../assests/icons/rightarrow.png')} />
                         </View>
-
-                        <View style={optionModalStyles.shareOption}>
-                            <Image style={optionModalStyles.icon} source={require('../assests/icons/Unfollow.png')} />
-                            <View style={optionModalStyles.textSection}>
-                                <Text style={optionModalStyles.text}>Unfollow User</Text>
-                                <Text style={optionModalStyles.text2}>See fewer posts like this</Text>
-                                <View style={optionModalStyles.seprator} />
+                        <View style={createPostStyles.seprator} />
+                        <View style={createPostStyles.shareOption}>
+                            <Image style={createPostStyles.icon} source={require('../assests/icons/question.png')} />
+                            <View style={createPostStyles.textSection}>
+                                <Text style={createPostStyles.text}>Unfollow User</Text>
+                                <Text style={createPostStyles.text2}>See fewer posts like this</Text>
+                               
                             </View>
+                            <Image style={createPostStyles.iconArrow} source={require('../assests/icons/rightarrow.png')} />
                         </View>
-                        <View style={optionModalStyles.shareOption}>
-                            <Image style={optionModalStyles.icon} source={require('../assests/icons/report.png')} />
-                            <View style={optionModalStyles.textSection}>
-                                <Text style={optionModalStyles.text}>Report Post</Text>
-                                <Text style={optionModalStyles.text2}>See fewer posts like this</Text>
-                                <View style={optionModalStyles.seprator} />
+                        <View style={createPostStyles.seprator} />
+                        <View style={createPostStyles.shareOption}>
+                            <Image style={createPostStyles.icon} source={require('../assests/icons/poll.png')} />
+                            <View style={createPostStyles.textSection}>
+                                <Text style={createPostStyles.text}>Report Post</Text>
+                                <Text style={createPostStyles.text2}>See fewer posts like this</Text>
                             </View>
+                            <Image style={createPostStyles.iconArrow} source={require('../assests/icons/rightarrow.png')} />
                         </View>
-                        <View style={optionModalStyles.shareOption}>
-                            <Image style={optionModalStyles.icon} source={require('../assests/icons/copy.png')} />
-                            <View style={optionModalStyles.textSection}>
-                                <Text style={optionModalStyles.text}>Copy Post link</Text>
-                                <Text style={optionModalStyles.text2}>See fewer posts like this</Text>
+                        <View style={createPostStyles.seprator} />
+                        <View style={createPostStyles.shareOption}>
+                            <Image style={createPostStyles.icon} source={require('../assests/icons/Event.png')} />
+                            <View style={createPostStyles.textSection}>
+                                <Text style={createPostStyles.text}>Copy Post link</Text>
+                                <Text style={createPostStyles.text2}>See fewer posts like this</Text>
                             </View>
+                            <Image style={createPostStyles.iconArrow} source={require('../assests/icons/rightarrow.png')} />
                         </View>
                     </View>
-                    // </Modal>
+                    <View style={{position: 'absolute', bottom: 0, right: 155}}>
+                    <TouchableOpacity onPress={()=>setOpenAddPostModal(false)}>
+                    <Image style={createPostStyles.cross} source={require('../assests/icons/Expanded.png')} />
+                    </TouchableOpacity>
+                    </View>
+         </Modal>
     )
 }

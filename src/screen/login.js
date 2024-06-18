@@ -18,6 +18,7 @@ const Login = ({navigation}) => {
         <View style={loginStyles.container}>
             <Image source={require('../assests/icons/Logo.png')} style={loginStyles.logo} />
             <Text style={loginStyles.welcomeText}>Welcome to HealthNest</Text>
+           <View style={loginStyles.inputSection}>
             <TextInput
                 style={loginStyles.input}
                 placeholder="Enter Mobile Number"
@@ -25,6 +26,8 @@ const Login = ({navigation}) => {
                 onChangeText={(text) => setMobileNumber(text)}
                 keyboardType="numeric"
             />
+             <Image source={require('../assests/icons/phone.png')} style={loginStyles.phoneLogo} />
+           </View>
             <View style={loginStyles.subTitle}>
                 <Text style={loginStyles.securityText}>
                     We never compromise on security!
