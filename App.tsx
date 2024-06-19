@@ -14,13 +14,17 @@ import { NativeBaseProvider } from "native-base";
 
 import { store, persistor } from './src/store/main';
 import { Provider } from 'react-redux';
-import { Text } from 'react-native';
+import { Platform, Text } from 'react-native';
 
 function App(): React.JSX.Element {
 
   return (
     <>
-      <SafeAreaProvider>
+
+      <SafeAreaProvider style={Platform.OS === 'ios' && { 
+  flex: 1, 
+  paddingTop:  40,
+ }}>
         <PaperProvider>
         <NativeBaseProvider>
            

@@ -1,8 +1,8 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 export const bottomNavStyles = StyleSheet.create({
     footer:{
-        height: 66,
+        height: (Platform.OS === 'ios') ? 85 : 66,
         paddingVertical: 8
     },
     bottomIcons: {

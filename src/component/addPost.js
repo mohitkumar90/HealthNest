@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Image, Text, TouchableOpacity, View } from 'react-native'
+import { Image, Platform, Text, TouchableOpacity, View } from 'react-native'
 // import {
 //     Actionsheet,
 //     useDisclose,
@@ -49,7 +49,7 @@ export default function AddPost({openAddPostModal, setOpenAddPostModal}) {
                             <Image style={createPostStyles.iconArrow} source={require('../assests/icons/rightarrow.png')} />
                         </View>
                     </View>
-                    <View style={{position: 'absolute', bottom: 0, right: 155}}>
+                    <View style={{position: 'absolute', bottom: (Platform.OS === 'ios') ? 25 : 0, right: 155}}>
                     <TouchableOpacity onPress={()=>setOpenAddPostModal(false)}>
                     <Image style={createPostStyles.cross} source={require('../assests/icons/Expanded.png')} />
                     </TouchableOpacity>
