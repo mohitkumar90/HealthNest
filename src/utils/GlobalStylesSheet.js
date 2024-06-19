@@ -45,7 +45,7 @@ export const postStyles = StyleSheet.create({
         marginRight: 10
     },
     optionIcon: {
-        width:32,
+        width:10,
         height: 32,
     },
     postImage: {
@@ -85,7 +85,8 @@ export const postStyles = StyleSheet.create({
         color: '#545B63',
         marginTop: 5,
         marginBottom: 10,
-        lineHeight: 21
+        lineHeight: 21,
+        textAlign:"justify",
     },
     category: {
         fontFamily: 'Proxima Nova',

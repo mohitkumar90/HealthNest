@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import { postStyles, eventStyles } from '../utils/GlobalStylesSheet'
 import { Avatar } from 'react-native-paper'
@@ -15,6 +15,16 @@ export default function PostDescription({ title, navigation, dispatch }) {
 
     const [openShareModal, setOpenShareModal] = useState(false);
     const [openPostOptionModal, setOpenPostOptionModal] = useState(false)
+    const [textShown, setTextShown] = useState(false); //To show ur remaining Text
+    const [lengthMore, setLengthMore] = useState(false); //to show the "Read more & Less Line"
+    const toggleNumberOfLines = () => { //To toggle the show text or hide it
+        setTextShown(!textShown);
+    }
+
+
+    const onTextLayout = useCallback(e => {
+        setLengthMore(e.nativeEvent.lines.length >= 3); //to check the text is more than 4 lines or not
+    }, []);
 
     return (
         <>
@@ -29,14 +39,14 @@ export default function PostDescription({ title, navigation, dispatch }) {
                 <View style={postStyles.cardSection}>
                     {title.profileImage && <Avatar.Image size={40} source={{ uri: title.profileImage }} style={postStyles.avatar} />}
                     <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <View >
+                        <View style={{ flex: 6 }}>
                             <View style={{ flex: 1, flexDirection: 'row' }}>
                                 <Text style={postStyles.name}>{title.name}</Text>
                                 <Text style={postStyles.status}>{title.status}</Text>
                             </View>
                             <Text style={postStyles.recent}>{title.recent}</Text>
                         </View>
-                        <TouchableOpacity onPress={() => setOpenPostOptionModal(true)}>
+                        <TouchableOpacity style={{ flex: 1, flexDirection: "row", justifyContent: "flex-end" }} onPress={() => setOpenPostOptionModal(true)}>
                             <Image style={postStyles.optionIcon} source={require('../assests/icons/option.png')} />
                         </TouchableOpacity>
 
@@ -73,7 +83,30 @@ export default function PostDescription({ title, navigation, dispatch }) {
                     <>
                         {!title.pollResult && <View style={postStyles.details}>
                             <Text style={postStyles.question}>{title.question}</Text>
-                            <Text style={postStyles.content}>{title.content}</Text>
+                            {/* <Text style={postStyles.content}>{title.content}</Text> */}
+                            <Text
+                                onTextLayout={onTextLayout}
+                                numberOfLines={textShown ? undefined : 3}
+                                style={{ ...postStyles.content }}
+                                ellipsizeMode="middle"
+                            >
+                                {title.content}
+                            </Text>
+                            {
+                                lengthMore ? <Text
+                                    onPress={toggleNumberOfLines}
+                                    style={{
+                                        fontFamily: 'Inter',
+                                        fontSize: 14,
+                                        fontWeight: '400',
+                                        color: '#545B63', color: "#000",
+                                        marginTop:-10,
+                                        marginBottom: 10
+                                    }}>{textShown ? '...See less' : '...See more'}</Text>
+                                    : null
+                            }
+
+
                         </View>}
                     </>
 
@@ -82,8 +115,8 @@ export default function PostDescription({ title, navigation, dispatch }) {
 
                 {title.postImage && <Image style={postStyles.postImage} source={{ uri: title.postImage }} />}
 
-                {!title.events && 
-                     <View style={postStyles.locationSection}>
+                {!title.events &&
+                    <View style={postStyles.locationSection}>
                         <Image style={postStyles.locIcon} source={require('../assests/icons/map.png')} />
                         <Text style={postStyles.location}>{title.location}</Text>
                     </View>}

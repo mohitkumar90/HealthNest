@@ -4,7 +4,7 @@ export const posts = [
     profileImage: 'https://picsum.photos/200',
     name: 'rohit.shetty12',
     time: '1min',
-    content: 'I’ve been facing a few possibble symptoms of skin cancer. I’ve googled the possibilities but i thought i’d ask the community inste...See More',
+    content: 'I’ve been facing a few possibble symptoms of skin cancer. I’ve googled the possibilities but i thought i’d ask the community inste. I’ve been facing a few possibble symptoms of skin cancer. I’ve googled the possibilities but i thought i’d ask the community inste',
     category: 'DIET',
     question: 'What are the signs and symptoms of skin cancer?',
     status: 'asked a question',
@@ -50,7 +50,7 @@ export const posts = [
     status: '',
     recent: 'created an event',
     category: 'LIFESTYLE',
-    content: 'My husband has his 3 days transplant assessment in Newcastle next month, strange mix of emotions. For those that have been through this how long did it take following assessment was it until you were t... See More',
+    content: 'My husband has his 3 days transplant assessment in Newcastle next month, strange mix of emotions. For those that have been through this how long did it take following assessment was it until you were to the upcoming session and film. I’ve been facing a few possibble symptoms of skin cancer. I’ve googled the possibilities but i thought i’d ask the community inste',
     location: 'Peninsula Park, Andheri, Mumbai',
     likes: 0,
     events: {
