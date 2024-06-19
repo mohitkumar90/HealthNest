@@ -24,4 +24,18 @@ Header tabsare clickable and One animation for header is added.
 
 
 - component folder is used for common component we are using in overall the component : like feed post compoent, comment and pops.
+
+
+
+Installation and Setup
+
+To set up the project locally, follow these steps -
+
+1. Clone the repository: git clone https://github.com/mohitkumar90/HealthNest.git
+
+2. Install the project dependencies: npm install
+
+3. Run the project on Android: npx react-native run-android
+
+4. Run the project on iOS: npx react-native run-ios
    
